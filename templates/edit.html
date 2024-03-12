@@ -1,0 +1,52 @@
+<!-- <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Edit Book</title>
+</head>
+<body>
+    <h1>Edit Book</h1>
+    <form method="POST" action="{{url_for('update')}}">
+        <label for="id">ID:</label>
+        <input type="text" name="id" value="{{ row[0] }}" readonly>
+        <br>
+        <label for="author">New Author:</label>
+        <input type="text" name="author" value="{{ row[1] }}" id="author" required>
+        <br>
+        <label for="new_price">New Price:</label>
+        <input type="text" name="price" value="{{ row[2] }}" required>
+        <br>
+        <input type="submit" value="Update">
+    </form>
+    <br>
+    <a href="{{ url_for('home') }}">Back to Book Table</a>
+</body>
+</html>  -->
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Edit Book</title>
+</head>
+<body>
+    <h1>Edit Book</h1>
+    <form method="POST" action="{{url_for('update')}}">
+        <label for="id">ID:</label>
+        <input type="text" name="id" value="{{ row[0] }}" readonly>
+        <br>
+        <label for="author">New Author:</label>
+        <input type="text" name="author" value="{{ row[1] }}" id="author" required>
+        <br>
+        <label for="price">New Price:</label> <!-- Corrected the name here -->
+        <input type="text" name="price" value="{{ row[2] }}" required>
+        <br>
+        <input type="submit" value="Update">
+    </form>
+    <br>
+    <a href="{{ url_for('index') }}">Back to Book Table</a>
+</body>
+</html>

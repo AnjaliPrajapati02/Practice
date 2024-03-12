@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Insert Book</title>
+</head>
+<body>
+    <h1>Insert New Book</h1>
+    <form method="POST" action="{{url_for('home')}}">
+        <label for="id">ID:</label>
+        <input type="text" name="id" required>
+        <br>
+        <label for="author">Author:</label>
+        <input type="text" name="author" required>
+        <br>
+        <label for="price">Price:</label>
+        <input type="text" name="price" required>
+        <br>
+        <input type="submit" value="Insert">
+    </form>
+    <br>
+    <a href="/home">Back to Book Table</a>
+</body>
+</html>

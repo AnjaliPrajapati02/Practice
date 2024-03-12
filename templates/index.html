@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Book Table</title>
+</head>
+<body>
+    <h1>Book Table</h1>
+    <table border="1">
+        <tr>
+            <th>ID</th>
+            <th>Author</th>
+            <th>Price</th>
+            <th>Delete</th>
+            <th>Editing</th>
+        </tr>
+        {% for row in book_data %}
+        <tr>
+            <td>{{ row[0] }}</td>
+            <td>{{ row[1] }}</td>
+            <td>{{ row[2] }}</td>
+            <td>
+                <form action="{{url_for('delete')}}" method="post">
+                    <input type="hidden" name="id" value="{{ row[0] }}">
+                    <button type="submit">Delete</button>
+                </form>
+            </td>
+            <td>
+                <form action="{{url_for('update')}}" method="get">
+                    <input type="hidden" name="id" value="{{ row[0] }}">
+                    <button type="submit">Edit</button>
+                </form>
+            </td>
+        </tr>
+        {% endfor %}
+    </table>
+    <br>
+    <a href="/">Insert New Book</a>
+</body>
+</html>
